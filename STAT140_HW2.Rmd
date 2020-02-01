@@ -1,0 +1,164 @@
+---
+title: 'STAT 140: Homework 2'
+author: "YOUR NAME HERE"
+date: "2/7/2020"
+output: pdf_document
+---
+
+## BOOK EXERCISES (OpenIntro Statistics, Fourth Edition)
+
+#### 2.1) **Mammal life spans.** Data were collected on life spans (in years) and gestation lengths (in days) for 62 mammals. A scatterplot of life span versus length of gestation is shown on pg. 56.
+
+  (a) What type of an association is apparent between life span and length of gestation?
+
+  **Answer:**
+
+  (b) What type of association would you expect to see if the axes of the plot were reversed, i.e. if we plotted length of gestation versus life span?
+
+  **Answer:**
+
+  (c) Are life span and length of gestation independent? Explain your reasoning.
+
+  **Answer:**
+
+#### 2.6) **Sleeping in college.** A recent article in a college newspaper stated that college students get an average of 5.5 hrs of sleep each night. A student who was skeptical about this value decided to conduct a survey by randomly sampling 25 students. On average, the sampled students slept 6.25 hours per night. Identify which value represents the sample mean and which value represents the claimed population mean.
+
+**Answer:**
+
+#### 2.7) **Days off at a mining plant.** Workers at a particular mining site receive an average of 35 days paid vacation, which is lower than the national average. The manager of this plant is under pressure from a local union to increase the amount of paid time off. However, he does not want to give more days off to workers because that would be costly. Instead he decides he should fire 10 employees in such a way as to raise the average number of days off reported by his employees. In order to achieve his goal, should he fire employees who have the most number of days off, least number of days off, or those who have about the average number of days off? 
+
+**Answer:**
+
+#### 2.15) **Distributions and appropriate statistics, Part I.** For each of the following, state whether you expect the distribution to be symmetric, right skewed, or left skewed. Also specify whether the mean or median would best represent a typical observation in the data, and whether the variability of observations would be best represented using the standard deviation or IQR. Explain your reasoning.
+
+
+  (a) Number of pets per household.
+
+  **Answer:**
+
+  (b) Distance to work, i.e. number of miles between work and home.
+
+  **Answer:**
+
+  (c) Heights of adult males.
+
+  **Answer:**
+
+
+#### 2.18) **Midrange.** The *midrange* of a distribution is defined as the average of the maximum and the minimum of that distribution. Is this statistic robust to outliers and extreme skew? Explain your reasoning. *Hint:* You may want to explore specific examples to build your intuition.
+
+**Answer:**
+
+#### 2.22) **View on Immigration.** 910 randomly sampled registered voters from Tampa, FL were asked if they thought workers who have illegally enetered the US should be (i) allowed to keep their jobs and apply for US citizenship, (ii) allowed to keep their jobs as temporary guest workers but not allowed to apply for US citizenship, or (iii) lose their jobs and have to leave the country. The results of the survey by political ideology are shown on pg. 69.
+
+  (a) What percent of these Tampa, FL voters identify themselves as conservatives?
+
+  **Answer:**
+
+  (b) What percent of these Tampa, FL voters are in favor of the citizenship option?
+
+  **Answer:**
+
+  (c) What percent of these Tampa, FL voters identify themselves as conservatives and are in favor of the citizenship option?
+
+  **Answer:**
+
+  (d) What percent of these Tampa, FL voters who identify themselves as conservatives are also in favor of the citizenship option? What percent of moderates share this view? What percent of liberals share this view?
+
+  **Answer:**
+
+  (e) Do political ideology and views on immigration appear to be independent? Explain your reasoning.
+
+  **Answer:**
+
+
+#### 2.30) **A new statistic.** The statistic $\frac{\bar{x}}{median}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are great than 0, $x_i > 0$. What is the expected shape of the distribution under the following conditions? Explain your reasoning. Note: it is helpful to look at this problem in the book so you do not need sort through the math typesetting.
+
+
+  (a) $\frac{\bar{x}}{median}=1$
+  
+  **Answer:**
+  
+  (b) $\frac{\bar{x}}{median}<1$
+
+  **Answer:**
+
+  (c) $\frac{\bar{x}}{median}>1$
+  
+  **Answer:**
+
+
+#### **Stats scores.** The final exam scores of twenty introductory statistics students are stored as a vector called \texttt{stats\_scores} in the R chunk below. 
+
+```{r stats scores, tidy=TRUE}
+## store stats scores in a vector call stats_scores
+stats_scores <- c(57,66,69,71,72,73,74,77,78,78,79,79,81,81,82,83,83,88,89,94)
+
+```
+
+  (a) Create a boxplot of the distribution of these scores using R. Are there any apparent outliers?
+  
+```{r stats scores boxplot, tidy=TRUE}
+## Create boxplot using ggplot function
+```
+  
+  **Answer:**
+
+  (b) Create a histogram of the distribution of these scores using R. What is the shape of this histogram? Do you expect the mean or median to be larger? Why?
+  
+```{r stats scores histogram, tidy=TRUE}
+## Create histogram using ggplot function
+
+```
+  
+  **Answer:**
+
+
+## EXPLORING ggplot2
+
+#### For the following exercises, you will be exploring a dataset collected on the game Pokemon Go. As noted in the \href{https://www.openintro.org/stat/data/?data=pokemon}{dataset description} on OpenIntro, "A key part of Pokémon Go is using evolutions to get stronger Pokemon, and a deeper understanding of evolutions is key to being the greatest Pokemon Go player of all time. This data set covers 75 Pokemon evolutions spread across four species. A wide set of variables are provided, allowing a deeper dive into what characteristics are important in predicting a Pokemon's final combat power (CP)." 
+
+```{r pokemon go setup, message=FALSE}
+## source pokemon go data from OpenIntro website
+source("http://www.openintro.org/stat/data/pokemon.R")
+
+## load ggplot2 package
+library(ggplot2)
+
+```
+
+The book \href{"https://r4ds.had.co.nz/"}{R for Data Science} can be a great resource for you as you learn more about what we can do in R. While a lot of it is advanced, it does have great examples for data visualizations. Open the PDF of the book in your browser. For this exercise, you will use the table of contents: Click on **3. Data Visualization** and then on **3.8 Position Adjustments**. Using the pokemon data, and specifically the variables `attack_weak_type` and `attack_weak_type_new`, generate the same bar plots that were generated for the diamonds data set in the book example. You should make 7 plots in total (I have already included the R chunks for your convenience). Pay attention to the subtle differences in the code that let you change how these plots look.
+
+- For these first two plots, choose either of the two variables to depict in your bar chart. What is the difference between these two plots? What piece of the code accomplished this change?
+
+```{r bar chart color outline, fig.cap="R Exercise Plot 1", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+```{r bar chart color fill, fig.cap="R Exercise Plot 2", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+- For the rest of the plots, you will be using both variables. Identify the plots that we have studied in class. What are the differences among these five plots? What pieces of code accomplished these changes?
+
+```{r stacked bar chart, fig.cap="R Exercise Plot 3", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+```{r stacked bar chart translucent, fig.cap="R Exercise Plot 4", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+```{r stacked bar chart no fill, fig.cap="R Exercise Plot 5", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+- Based on the last three plots you generated, what is the default argument for position?
+
+```{r standardized stacked bar chart, fig.cap="R Exercise Plot 6", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
+
+```{r side-by-side bar chart, fig.cap="R Exercise Plot 7", out.width = '50%', fig.align='center', tidy=TRUE}
+
+```
