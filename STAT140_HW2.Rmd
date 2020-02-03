@@ -92,21 +92,22 @@ output: pdf_document
 
 ```{r stats scores, tidy=TRUE}
 ## store stats scores in a vector call stats_scores
+library(ggplot2)
 stats_scores <- data.frame(scores=c(57,66,69,71,72,73,74,77,78,78,79,79,81,81,82,83,83,88,89,94))
-
 ```
 
   (a) Create a boxplot of the distribution of these scores using R. Are there any apparent outliers?
   
-```{r stats scores boxplot, tidy=TRUE}
+```{r stats scores boxplot, fig.align='center', tidy=TRUE}
 ## Create boxplot using ggplot function
+
 ```
   
   **Answer:**
 
   (b) Create a histogram of the distribution of these scores using R. What is the shape of this histogram? Do you expect the mean or median to be larger? Why?
   
-```{r stats scores histogram, tidy=TRUE}
+```{r stats scores histogram, fig.align='center', tidy=TRUE}
 ## Create histogram using ggplot function
 
 ```
